@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Disable AntiAlias in Chrome",
+    "version": "0.1",
+    "content_scripts": [{
+        "matches": ["*://*/*"],
+        "exclude_globs": ["*keep*"],
+        "css": ["style.css"]
+    }],
+    "permissions": [
+        "*://*/*",
+        "activeTab"
+    ],
+    "browser_action": {
+        "default_title": "Disable Font Smoothing",
+        "default_icon": "icon_19px.png"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistant": false
+    }
+}
